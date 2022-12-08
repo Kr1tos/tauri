@@ -69,7 +69,7 @@ base64 = { version = "0.13", optional = true }
 clap = { version = "3", optional = true }
 reqwest = { version = "0.11", features = [ "json", "stream" ], optional = true }
 bytes = { version = "1", features = [ "serde" ], optional = true }
-attohttpc = { version = "0.22", features = [ "compress", "json", "form" ], optional = true }
+attohttpc = { git = "https://github.com/Kr1tos/attohttpc.git", branch = "master", features = [ "compress", "json", "form" ], optional = true }
 open = { version = "3.0", optional = true }
 shared_child = { version = "1.0", optional = true }
 os_pipe = { version = "1.0", optional = true }
@@ -145,8 +145,7 @@ http-multipart = [ "attohttpc/multipart-form", "reqwest/multipart" ]
 shell-open-api = [ "open", "regex", "tauri-macros/shell-scope" ]
 fs-extract-api = [ "zip" ]
 reqwest-client = [ "reqwest", "bytes" ]
-reqwest-native-tls-vendored = [ "reqwest-client", "reqwest/native-tls-vendored" ]
-native-tls-vendored = [ "attohttpc/tls-vendored" ]
+reqwest-native-tls-vendored = [ "reqwest-client" ]
 process-command-api = [ "shared_child", "os_pipe" ]
 global-shortcut = [
   "tauri-runtime/global-shortcut",
